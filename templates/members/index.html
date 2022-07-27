@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to Team Members {% endblock %}</h1><hr />
+    {% for member in members %}
+        <a href="{{ url_for('member', member_id=member['id']) }}">
+            <h3>{{ member['fullname'] }}</h3>
+        </a>
+        <p>{{ member['bio'] }}</p>
+        <p><small>{{ member['created'] }}</small></p>
+        <a href="{{ url_for('edit', id=member['id']) }}">
+            <span class="btn btn-secondary">Edit</span>
+        </a>
+        <hr>
+    {% endfor %}
+{% endblock %}

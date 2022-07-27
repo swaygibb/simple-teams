@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ member['fullname'] }} {% endblock %}</h2>
+    <span class="badge badge-primary">{{ member['created'] }}</span>
+    <p>{{ member['bio'] }}</p>
+    <p><a class="btn btn-secondary" href="{{ url_for('index') }}"><< Team Members</a></p>
+{% endblock %}
